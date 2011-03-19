@@ -2,7 +2,13 @@
 
 There have been several occasions where I can think of a particular sample in a girl talk song, but can't remember where or which song it's in. This helps that predicament a bit. Fortunately, there are a plethora of decent-quality Girl Talk videos on YouTube, so generally when you search for a girl talk song with "girl talk < song name >" it is the first hit.
 
-Test out this code running on http://isthisinagirltalksong.com
+Test out this code running on [http://isthisinagirltalksong.com](http://isthisinagirltalksong.com)
+
+protip: press escape to clear out your current search
+
+protip: you can use the query string ?q= to pre-populate the search field
+
+protip: you can press enter to start playing the first returned result
 
 ### Highlights
 
@@ -11,6 +17,7 @@ Pulled a complete list of samples from [this site](http://www.illegal-tracklist.
 Parsed it and generated the objects.js with parse.php.
 
 All searching done client-side (even works in mobile browsers!)
+
 
 ### TODO
 

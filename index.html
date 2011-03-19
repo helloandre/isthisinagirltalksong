@@ -8,6 +8,13 @@
 		var result_max = 5;
 		var previous_link = '';
 		$(function(){
+			// allow linking to queries / bookmarking
+			if (window.location.search.indexOf('q=') >= 0){
+				q = window.location.search.replace(/\?q=/, '');
+				$('#search').val(q);
+				search(q);
+			}
+
 			// just make that inital stuff go away
 			$('#search').focus(function(){
 				if ($(this).val() == 'this artist or song'){
@@ -30,15 +37,36 @@
 				return false;
 			})
 
+			
+			$('#search').keyup(function(e){
+				// enter
+				if (e.keyCode === 13){
+					$('.sample:first').trigger('click');
+				}
+				else {
+					// because indexOf doesn't do case insensitive search
+					search($(this).val().toLowerCase());
+				}
+
+				return false;
+			});
+
+			$('body').live('keyup', function(e){
+				// esc
+				if (e.keyCode === 27){
+					$('#search').val('');
+					search(''); // trick it into clearing itself;
+				}
+			})
+
 			// the big kahuna 
-			$('#search').keyup(function(){
+			// moved into a function to allow querying directly from the url
+			function search(val){
 				if (!searching){
 					// again, poor man's locking. this is not really an issue on any hardware made after 2005. but just in case.
 					searching = true;
 					$('#autocomplete').html('');
 
-					// because indexOf doesn't do case insensitive search
-					val = $(this).val().toLowerCase();
 					len = val.length;
 					if (len > 3){
 						count = 1;
@@ -54,17 +82,18 @@
 							}
 						});
 						// no bueno
-						if (count == 1){
+						if (count === 1){
 							$('#result').html('<p id="no">NO</p>');
 						}
 					}
 					// clean up after ourselves
 					else {
 						$('#result').html('');
+						previous_link = '';
 					}
 					searching = false;
 				}
-			});
+			}
 
 			// build the html for an individual autocompleted link
 			// this takes in so many parameters than could be calculated for speed reasons
