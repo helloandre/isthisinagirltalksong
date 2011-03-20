@@ -4,11 +4,13 @@ There have been several occasions where I can think of a particular sample in a 
 
 Test out this code running on [http://isthisinagirltalksong.com](http://isthisinagirltalksong.com)
 
-protip: press escape to clear out your current search
+### HotKeys
 
-protip: you can use the query string ?q= to pre-populate the search field
+Up and down arrows control which song is highligthed
 
-protip: you can press enter to start playing the first returned result
+Enter plays the currently highlighted song
+
+Escape clears the search box
 
 ### Highlights
 

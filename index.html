@@ -39,9 +39,30 @@
 
 			
 			$('#search').keyup(function(e){
+
 				// enter
 				if (e.keyCode === 13){
-					$('.sample:first').trigger('click');
+					$('.clicked').trigger('click');
+				}
+				// down
+				else if (e.keyCode === 40){
+					next = $('.clicked').next();
+					if (next.length !== 0){
+						$('.clicked').removeClass('clicked');
+						$(next).addClass('clicked');
+					}
+				}
+				// up
+				else if (e.keyCode === 38){
+					prev = $('.clicked').prev();
+					if (prev.length !== 0){
+						$('.clicked').removeClass('clicked');
+						$(prev).addClass('clicked');
+					}
+				}
+				// esc
+				else if (e.keyCode === 27){
+					clearSearch()
 				}
 				else {
 					// because indexOf doesn't do case insensitive search
@@ -54,8 +75,7 @@
 			$('body').live('keyup', function(e){
 				// esc
 				if (e.keyCode === 27){
-					$('#search').val('');
-					search(''); // trick it into clearing itself;
+					clearSearch()
 				}
 			})
 
@@ -156,6 +176,11 @@
 					}
 				);
 			}
+
+			function clearSearch(){
+				$('#search').val('');
+				search(''); // trick it into clearing itself;
+			}
 		})
 	</script>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:light' rel='stylesheet' type='text/css'>
@@ -164,10 +189,10 @@
 		#container {width: 900px;margin: 0px auto;}
 		#content {width: 500px;margin: 0px auto;}
 		#search {padding: 4px;border-radius: 5px;outline:none;}
-		.sample {padding: 6px;cursor: pointer;}
+		.sample {padding: 6px;cursor: pointer;border-bottom: 1px solid #ccc;}
 		.sample:hover{background: #ccc;}
 		.clicked{background:#C5FFBB;}
-		#playing{font-size:12px;}
+		#playing{font-size:12px;padding:3px;background-color:#999;color:#fff;}
 		.found {font-weight: bold;color:black;}
 		#vid-title{text-align:center;font-size:29px;font-weight: bold;}
 		#result {padding-top: 20px;min-height: 500px;}
