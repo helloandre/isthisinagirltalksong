@@ -11,8 +11,8 @@
 			// allow linking to queries / bookmarking
 			if (window.location.search.indexOf('q=') >= 0){
 				q = window.location.search.replace(/\?q=/, '');
-				$('#search').val(q);
-				search(q);
+				$('#search').val(unescape(q));
+				search(unescape(q));
 			}
 
 			// just make that inital stuff go away
@@ -222,6 +222,6 @@
 			<br>this site is in no way affiliated with anyone mentioned or linked to here. except me.
 		</p>
 	</div>
-	
+
 </body>
 </html>
