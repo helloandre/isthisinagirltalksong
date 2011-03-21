@@ -4,28 +4,19 @@ There have been several occasions where I can think of a particular sample in a 
 
 Test out this code running on [http://isthisinagirltalksong.com](http://isthisinagirltalksong.com)
 
-### HotKeys
-
-Up and down arrows control which song is highligthed
-
-Enter plays the currently highlighted song
-
-Escape clears the search box
-
 ### Highlights
 
-Pulled a complete list of samples from [this site](http://www.illegal-tracklist.net/Main/HomePage).
+ * Up and down arrows control which song is highligthed
+ * Enter plays the currently highlighted song
+ * Escape clears the search box and current search
+ * You can use a ?q=<query> to bookmark/link to searches
 
-Parsed it and generated the objects.js with parse.php.
+### Technical stuff
 
-All searching done client-side (even works in mobile browsers!)
-
-
-### TODO
-
-The very next thing to happen is to have an 'autocorrect' feature (closest matching word). but that's harder than 6 hours on a friday night.
-
-The next step in this is to make lyrics searchable too. I have a sneaky suspision this _won't_ be done client-side.
+ * Pulled a complete list of samples from [this site](http://www.illegal-tracklist.net/Main/HomePage).
+ * Parsed it with built-in DOM traversal/searching in php and generated the objects.js with parse.php. (please don't everybody spam their site with this script)
+ * All searching done client-side (even works in mobile browsers!) by using [jQuery's each](http://api.jquery.com/jQuery.each/) method
+ * Youtube api stuff done using their [Data API](http://code.google.com/apis/youtube/2.0/reference.html#Searching_for_videos)
 
 #### License
 
