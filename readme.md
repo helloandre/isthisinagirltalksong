@@ -2,7 +2,7 @@
 
 There have been several occasions where I can think of a particular sample in a girl talk song, but can't remember where or which song it's in. This helps that predicament a bit. Fortunately, there are a plethora of decent-quality Girl Talk videos on YouTube, so generally when you search for a girl talk song with "girl talk < song name >" it is the first hit.
 
-Test out this code running on [http://isthisinagirltalksong.com](http://isthisinagirltalksong.com)
+Test out this code running on [the demo page](http://helloandre.github.com/itiagts.html)
 
 ### Highlights
 
