@@ -154,6 +154,7 @@ if (!Function.prototype.bind) {
             // no bueno
             if (results.length === 0){
                 this.$results.html(this.templates.no);
+                this.$video.empty();
             }
             
             // bueno
